@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>AN BIKO</ion-title>
+    <ion-buttons slot="secondary">
+
+      <ion-button>
+        <ion-icon slot="end" name="notifications-outline" routerLink="/profile"></ion-icon>
+      </ion-button>
+
+      <!-- <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end" (click)=presentPopover($event)>
+      <ion-button color="light">
+        <ion-icon slot="icon-only" ios="ellipsis-vertical" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs (ionTabsDidChange)='setSelectedTab()' color="secondary">
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="actualy">
+      <ion-icon [name]="selected == 'actualy' ? 'newspaper' : 'newspaper-outline'"></ion-icon>
+      <ion-label>Actu</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="anbiko">
+      <ion-icon [name]="selected == 'anbiko' ? 'sunny' : 'sunny-outline'"></ion-icon>
+      <ion-label>AN BIKO</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chatroom">
+      <ion-icon [name]="chatroom == 'chatroom' ? 'globe' : 'globe-outline'"></ion-icon>
+      <ion-label>Actualités</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chat">
+      <ion-icon [name]="selected == 'chat' ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline'"></ion-icon>
+      <ion-label>Chat</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button tab="localites">
+      <ion-icon [name]="selected == 'localites' ? 'notifications' : 'notifications-outline'"></ion-icon>
+      <ion-label>Localités</ion-label>
+    </ion-tab-button> -->
+  </ion-tab-bar>
+</ion-tabs>
